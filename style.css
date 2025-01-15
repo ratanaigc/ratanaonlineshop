@@ -471,6 +471,21 @@
     margin: 0;
 }
 
+.no-result {
+    font-family: khmer os;
+    position: relative;
+    left: 250%;
+    bottom: 25%;
+    color: red;
+    font-size: 200%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust height as needed */
+    margin: 0;
+}
+
 /* Responsive design for screens smaller than 600px------------------------ */
 
     @media screen and (max-width: 1920px) {
@@ -504,6 +519,21 @@
             object-fit: contain; /* Maintain the aspect ratio of the logo */
             transition: transform 0.3s ease-in-out; /* Add a smooth hover effect */
         }    
+        /* no-result------------------------------------- */
+    .no-result {
+        font-family: khmer os;
+        position: relative;
+        left: 150%;
+        bottom: 25%;
+        color: red;
+        font-size: 200%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px; /* Adjust height as needed */
+        margin: 0;
+        }
     }
     @media screen and (max-width: 620px) {
         .menu-wrapper {
@@ -550,5 +580,24 @@
             width: 14%; /* Adjust the size of the logo */
             object-fit: contain; /* Maintain the aspect ratio of the logo */
             transition: transform 0.3s ease-in-out; /* Add a smooth hover effect */
-        }    
+        }
+        /* no-result------------------------------------- */
+        .no-result {
+        font-family: khmer os;
+        position: relative;
+        left: 50%;
+        bottom: 25%;
+        color: red;
+        font-size: 200%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px; /* Adjust height as needed */
+        margin: 0;
+        }
     }
+
+/* no-result------------------------------------- */
+
+    
