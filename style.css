@@ -360,6 +360,7 @@
 }
 /* Profile picture container */
 .myprofile {
+    position: relative;
     display: flex;
     justify-content: center; /* Center the image horizontally */
     margin-bottom: 10px; /* Space between the image and the title */
