@@ -12,22 +12,24 @@
         color: white;
         
     }
-    main {
+    .main {
         background-image: url("img/background/boran2.png"); /* Background image */
         background-repeat: no-repeat; /* Prevent repeating of the image */
         background-size: cover; /* Scale the image to cover the entire background */
         background-position: center center; /* Center the image vertically and horizontally */
         background-attachment: fixed; /* Keeps the background fixed while scrolling */
         color: white; /* Text color */
-        height: 100vh; /* Ensure the main section takes full viewport height */
+        min-height: 100vh; /* Ensure the main section takes full viewport height */
         width: 100%; /* Ensure it covers the full width */
-        display: flex;
-        justify-content: center;
-        align-items: center; /* Center the content inside the main */
+        display: flex; /* Enable flexbox layout */
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Center the content vertically */
+        position: relative; /* Allows absolute positioning of child elements if needed */
+        overflow: hidden; /* Prevents any overflow issues */
     }
     
     /* Optional: Make sure content inside main is centered and responsive */
-    main > * {
+    .main > * {
         max-width: 90%; /* Prevent content from going off the screen */
         text-align: center; /* Center text and other elements */
     }
@@ -158,9 +160,19 @@
     background-color: rgba(0, 0, 0, 0.1); /* ផ្ទៃខាងក្រោយនៅពេល hover */
     transform: scale(1.2); /* ពង្រីក logo 120% នៅពេល hover */
 }
-
-
-    /* big text */
+/* headf------------------------------------------------------------- */
+.headf {
+    position: fixed;   /* Fix the header at the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;       /* Ensure it spans the full width of the viewport */
+    background-color: #3c93eb;  /* Background color for the header */
+    padding: 0px;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+    z-index: 1000;     /* Keep it above other elements */
+}
+/* big text------------------------------------------ */
     .icon1{
         width: 8vw;
     }
@@ -212,6 +224,7 @@
     
     .search-bar input:focus {
         border-color: #6997dd;
+        z-index: inherit;
         box-shadow: 0 0 10px rgba(105, 151, 221, 0.5);
     }
             
@@ -267,6 +280,8 @@
 /* info----------------------------------------------- */
 /* General styles for the info section */
 .info {
+    border: solid 5px rgb(5, 42, 90);
+    display: block;
     position: relative;  /* Keeps the info section fixed at the bottom */
     bottom: 0;  /* Stick it to the bottom */
     left: 0;
