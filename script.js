@@ -1,5 +1,4 @@
 
-
 const menuWrapper = document.querySelector(".menu-wrapper");
 
 // Generate product cards
@@ -11,22 +10,22 @@ menuWrapper.innerHTML = product.map(item => `
     </div>
 `).join("");
 
+// Show product details in modal
 function showDetails(productId) {
     const item = product.find(p => p.id === productId);
     if (item) {
         document.getElementById("modalPhoto").src = item.photo;
         document.getElementById("modalName").textContent = item.name;
-        document.getElementById("modalId").textContent = item.id;
-        document.getElementById("modalGender").textContent = item.gender;
-        document.getElementById("modalDob").textContent = item.dob;
+        document.getElementById("modalCategory").textContent = item.category;
+        document.getElementById("modalPrice").textContent = item.price;
+        document.getElementById("modalDetail").textContent = item.detail;
         document.getElementById("modalAddress").textContent = item.address;
         document.getElementById("modalPhone").textContent = item.phone;
-        document.getElementById("modalFacebook").href = item.facebook;
-        document.getElementById("modalTelegram").href = item.telegram;
-        document.getElementById("studentModal").style.display = "block";
+        document.getElementById("studentModal").style.display = "flex";
     }
 }
 
+// Close modal
 document.getElementById("closeModal").onclick = function () {
     document.getElementById("studentModal").style.display = "none";
 };
@@ -36,10 +35,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
     const searchTerm = this.value.toLowerCase();
     const filteredProducts = product.filter(item =>
         item.name.toLowerCase().includes(searchTerm) ||
-        item.id.includes(searchTerm) ||
-        item.dob.includes(searchTerm) ||
-        item.gender.toLowerCase().includes(searchTerm) ||
-        item.address.toLowerCase().includes(searchTerm)
+        item.category.toLowerCase().includes(searchTerm)
     );
 
     menuWrapper.innerHTML = filteredProducts.map(item => `
@@ -50,9 +46,9 @@ document.getElementById('searchInput').addEventListener('input', function () {
         </div>
     `).join("");
 
-    if (filteredProducts.length === 0) {
-        menuWrapper.innerHTML = `<p class="find" style="color:white; text-align:center;">គ្មានលទ្ធផលស្វែងរក</p>`;
-    }
+if (filteredProducts.length === 0) {
+    menuWrapper.innerHTML = `<p class="no-result">គ្មានលទ្ធផលស្វែងរក</p>`;
+}
 });
 
 function highlightText(text, searchTerm) {
@@ -60,28 +56,6 @@ function highlightText(text, searchTerm) {
     const regex = new RegExp(`(${searchTerm})`, 'gi');
     return text.replace(regex, '<span class="highlight">$1</span>');
 }
-
-// Select the image and modal---------------------------------------------------
-const image = document.getElementById("modalPhoto");
-
-// Toggle the 'enlarged' class on click
-image.addEventListener("click", function() {
-    image.classList.toggle("enlarged");
-});
-
-// Optional: Close the modal when clicking outside the image------------------------
-const modal = document.getElementById("studentModal");
-const closeModal = document.getElementById("closeModal");
-
-closeModal.addEventListener("click", function() {
-    modal.style.display = "none";
-});
-
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
 
 // conect info --------------------------------------------------
 
@@ -104,4 +78,3 @@ connectButton.addEventListener("click", function() {
 // Smooth scroll to the info section when it is revealed
 infoBox.scrollIntoView({ behavior: "smooth", block: "start" });
 });
-
