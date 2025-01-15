@@ -1,92 +1,5 @@
 
 
-const product = [
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-    { 
-        id: "1", 
-        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
-        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
-        price: "46$",
-        photo: "./img/product/camel.png",
-        gender: "Electronics",
-        address: "Apple Store",
-        phone: "123-456-7890",
-    },
-
-
-
-    // អ្នកអាចបន្ថែមទិន្នន័យផ្សេងៗនៅទីនេះ
-];
-
 const menuWrapper = document.querySelector(".menu-wrapper");
 
 // Generate product cards
@@ -172,10 +85,23 @@ window.onclick = function(event) {
 
 // conect info --------------------------------------------------
 
+// Select the connect button and the info section
 const connectButton = document.querySelector(".conect");
 const infoBox = document.querySelector(".info");
 
+// Set initial display state of the info box
+infoBox.style.display = "none"; // Start with it hidden
+
+// Add an event listener for the connect button
 connectButton.addEventListener("click", function() {
     // Toggle the visibility of the info box
-    infoBox.style.display = (infoBox.style.display === "none" || infoBox.style.display === "") ? "block" : "none";
+    if (infoBox.style.display === "none" || infoBox.style.display === "") {
+        infoBox.style.display = "block"; // Show the info box
+        infoBox.style.maxHeight = "1000px"; // Optionally, you can animate height
+        infoBox.style.padding = "20px"; // Add padding when visible (optional)
+    }
+    infoBox.style.padding = "0 20px"; // Remove padding when hidden (optional)
+// Smooth scroll to the info section when it is revealed
+infoBox.scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
