@@ -61,6 +61,28 @@ const product = [
         address: "Apple Store",
         phone: "123-456-7890",
     },
+    { 
+        id: "1", 
+        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
+        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
+        price: "46$",
+        photo: "./img/product/camel.png",
+        gender: "Electronics",
+        address: "Apple Store",
+        phone: "123-456-7890",
+    },
+    { 
+        id: "1", 
+        category: "គឿងសម្ភារៈក្នុងផ្ទះ", 
+        name: "ឆ្នាំងអគ្គិសនី មិនបាច់ប្រើខ្លាញ់",
+        price: "46$",
+        photo: "./img/product/camel.png",
+        gender: "Electronics",
+        address: "Apple Store",
+        phone: "123-456-7890",
+    },
+
+
 
     // អ្នកអាចបន្ថែមទិន្នន័យផ្សេងៗនៅទីនេះ
 ];
@@ -126,24 +148,6 @@ function highlightText(text, searchTerm) {
     return text.replace(regex, '<span class="highlight">$1</span>');
 }
 
-
-// Get the target list element-----------------------------------------
-    const list = document.getElementById('dynamic-list');
-
-    // Generate list items A = 0 to Z = 25
-    for (let i = 0; i <= 25; i++) {
-        const char = String.fromCharCode(65 + i); // Convert ASCII code to letter
-        const li = document.createElement('li'); // Create <li> element
-        li.textContent = `${char} = ${i}`; // Set text content
-        list.appendChild(li); // Append to <ul>
-    }
-
-    // Add the last item
-    const finalLi = document.createElement('li');
-    finalLi.textContent = 'បម្លែងតែមួយអក្សរដំបូងទៅជាលេខក៏បាន😂';
-    list.appendChild(finalLi);
-
-
 // Select the image and modal---------------------------------------------------
 const image = document.getElementById("modalPhoto");
 
@@ -152,7 +156,7 @@ image.addEventListener("click", function() {
     image.classList.toggle("enlarged");
 });
 
-// Optional: Close the modal when clicking outside the image
+// Optional: Close the modal when clicking outside the image------------------------
 const modal = document.getElementById("studentModal");
 const closeModal = document.getElementById("closeModal");
 
@@ -165,3 +169,13 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
+
+// conect info --------------------------------------------------
+
+const connectButton = document.querySelector(".conect");
+const infoBox = document.querySelector(".info");
+
+connectButton.addEventListener("click", function() {
+    // Toggle the visibility of the info box
+    infoBox.style.display = (infoBox.style.display === "none" || infoBox.style.display === "") ? "block" : "none";
+});
