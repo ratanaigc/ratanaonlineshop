@@ -281,7 +281,7 @@
 /* info----------------------------------------------- */
 /* General styles for the info section */
 .info {
-    display: none;
+    display: block;
     border: solid 5px rgb(5, 42, 90);
     position: relative;  /* Keeps the info section fixed at the bottom */
     width: 100%;  /* Full width of the viewport */
